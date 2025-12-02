@@ -5,11 +5,9 @@ services:
       dockerfile: docker/Dockerfile
     container_name: trend-radar
     restart: unless-stopped
-
     volumes:
       - ../config:/app/config:ro
       - ../output:/app/output
-
     environment:
       - TZ=Asia/Shanghai
       - FEISHU_WEBHOOK_URL=${FEISHU_WEBHOOK_URL:-}
